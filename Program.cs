@@ -1,31 +1,39 @@
 ﻿using System;
 namespace EmployeeWageCompute
-{/// <summary>
-/// UC-1 Employee is present or absent.
-/// </summary>
+{
     public class program
-    {
+    {/// <summary>
+     /// UC-2 Calculate Daily Employee Wages.
+     /// </summary>
+     /// <param name="args"></param>
         static void Main(string[] args)
         {
             //constants
-            int IS_PRESENT = 1;
+            int IS_FULL_TIME = 1;
+            int RATE_PER_HOUR = 20;
 
-            //pre defined random class
+            //local Variables
+            int empHrs = 0;
+            int empWage = 0;
+
+            //Pre defined random class
             Random random = new Random();
 
-            //Next method() 0-initial value,2-number of elements
+            //Next method(),0-initial value,2-number of elements
             int empCheck = random.Next(0, 2);
 
-            //If Selection statement
-            if (empCheck == IS_PRESENT)
+            //If-else Selection statement
+            if (empCheck == IS_FULL_TIME)
             {
-                Console.WriteLine("Employee is Present");
+                empHrs = 8;
             }
             else
             {
-                Console.WriteLine("Employee is Absent");
+                empHrs = 0;
             }
-            Console.ReadLine();
+            empWage = empHrs * RATE_PER_HOUR;
+            Console.WriteLine("Emp wage: " + empWage);
+
         }
     }
 }
