@@ -2,7 +2,7 @@
 using System;
 namespace EmployeeWageCompute
 {/// <summary>
-/// UC- 6 Calculate wages till a condition of total working hours of 100 or max days of 20 is reached for a month
+/// /UC7 Refactor the code to write method for Employee Wage Calculation for a month
 /// </summary>
     public class program
     {
@@ -12,8 +12,18 @@ namespace EmployeeWageCompute
         public const int NUM_OF_WORKING_DAYS = 20;
         public const int MAX_HRS_IN_MONTH = 100;
 
-        static void Main(String[] args)
+        //Creating method for checking employee attendance
+        public static int empAttendance()
         {
+            Random random = new Random();
+            int empAttendance = random.Next(0, 3);
+            return empAttendance;
+        }
+
+        //creating method to calculate employee wage
+        public static void empWage()
+        {
+
             //local Variablce
             int empHrs = 0;
             int totalEmpWage = 0;
@@ -48,7 +58,13 @@ namespace EmployeeWageCompute
             }
             totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOURS;
             Console.WriteLine("Total Emp Wage : " + totalEmpWage);
+            
+        }
+        static void Main(String[] args)
+        {
+            program.empWage();
             Console.ReadLine();
+
         }
     }
 }
